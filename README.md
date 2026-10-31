@@ -1,4 +1,5 @@
-# Physics-Grounded Action Grammars: Week 1 codebase
+# Physics-Grounded Action Grammars: #
+
 
 Everything you need for the first week of the project. You get:
 
