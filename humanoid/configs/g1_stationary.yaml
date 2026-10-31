@@ -1,0 +1,19 @@
+# Research configuration placeholder; not a certified robot controller config.
+platform: unitree_g1
+simulator: mujoco
+control_mode: stationary_upper_body
+hardware_control_enabled: false
+backend_status: not_implemented
+tasks:
+  - pick_place
+  - stack
+geometry:
+  cube_size_m: 0.05
+checks:
+  grasp_proximity_m: 0.03
+  stack_xy_tolerance_m: 0.015
+  stack_vertical_tolerance_m: 0.005
+notes: >
+  This configuration is illustrative. Real Unitree G1 model, hand and joint
+  mapping, collision checks, stability margins, and motion controller
+  must be selected and implemented before a physics or hardware run.
