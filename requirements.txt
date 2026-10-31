@@ -1,0 +1,12 @@
+# Core (grammar, executor, eval harness, tests): runs on any laptop
+numpy>=1.24
+networkx>=3.0
+pyyaml>=6.0
+pytest>=7.0
+
+# Calibration solver (any OpenCV version works; 4.x also enables the 5 OpenCV methods)
+opencv-contrib-python>=4.7
+
+# Robot PC only (Day 3). Install rclpy/tf2_ros via your ROS2 distro, not pip:
+#   sudo apt install ros-humble-tf2-ros   (or ros-jazzy-...)
+# pyrealsense2

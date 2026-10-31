@@ -1,0 +1,29 @@
+# Harder setting: scene disturbances, perception noise, more failures.
+# Use it to compare local repair against full replanning:
+#   python -m eval.run --config configs/stress.yaml --tag local
+#   python -m eval.run --config configs/stress.yaml --no-local-repair --tag full
+env: mock
+tasks: [pick_place, stack, peg_insert]
+episodes: 100
+seed: 1
+out_dir: runs
+
+randomisation:
+  object_xy_noise: 0.04
+
+mock:
+  p_grasp_fail: 0.15
+  p_slip_transport: 0.08
+  approach_noise_std: 0.004
+  align_noise_std: 0.0015
+  rot_noise_deg: 1.5
+  hole_clearance: 0.002
+  p_disturb: 0.05
+  obs_noise_std: 0.0005
+  p_collision: 0.01
+
+executor:
+  max_steps: 80
+  max_atom_retries: 3
+  max_full_replans: 3
+  local_repair: true

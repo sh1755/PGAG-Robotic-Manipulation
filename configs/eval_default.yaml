@@ -1,0 +1,29 @@
+# Evaluation config. Every field can be overridden from the command line
+# (see `python -m eval.run --help`).
+
+env: mock              # mock | (isaaclab and real come in later weeks)
+tasks: [pick_place, stack, peg_insert]
+episodes: 50
+seed: 0
+out_dir: runs
+
+randomisation:
+  object_xy_noise: 0.03   # m, uniform jitter of initial object positions
+
+# Failure injection for the mock env (see envs/mock_env.py for meanings)
+mock:
+  p_grasp_fail: 0.08
+  p_slip_transport: 0.04
+  approach_noise_std: 0.003
+  align_noise_std: 0.001
+  rot_noise_deg: 1.0
+  hole_clearance: 0.002
+  p_disturb: 0.0
+  obs_noise_std: 0.0
+  p_collision: 0.0
+
+executor:
+  max_steps: 60
+  max_atom_retries: 3
+  max_full_replans: 2
+  local_repair: true      # false = full-replanning baseline
